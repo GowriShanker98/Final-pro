@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+  <title>Home Page</title>
+{% endblock  %}
+
+{% block content %}
+{% include "partials/topbar.html" %}
+{% include "partials/navbar.html" %}
+  {% if user.is_authenticated %}
+    <h1>Welcome Mr./Ms.{{user}} to E-Voting Home Page</h1>
+  {% else %}
+    <center><h1>Welcome to E-Voting Home Page</h1></center>
+  {% endif %}
+  
+{% endblock  %}

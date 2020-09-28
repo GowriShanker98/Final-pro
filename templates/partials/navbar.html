@@ -1,0 +1,26 @@
+<!--Nav Bar Html Page-->
+<div class="container">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'Home' %}">Home</a>
+        </li>
+        
+        {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'Vote' %}">Vote</a>
+        </li>
+        <li>
+              <a href="{% url 'Logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'Register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'Login' %}">Login</a>
+        </li>
+        {% endif %}
+        
+        
+    </ul>
+</div>
